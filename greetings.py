@@ -1,4 +1,4 @@
-# greetings.py
+
 
 def show_intro():
     print("=" * 30 + " Welcome to the User Info Program " + "=" * 30)

@@ -1,4 +1,4 @@
-# helper_functions.py
+
 
 def validate_input(user_input):
     """Check if user input is not empty and is a string."""

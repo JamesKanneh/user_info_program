@@ -2,17 +2,21 @@
 
 def validate_input(user_input):
     """Check if user input is not empty and is a string."""
-    if user_input and isinstance(user_input, str):
+    if  isinstance(user_input, str) and user_input.strip() !="":
         return True
     return False
 
 
 def convert_to_binary(text):
     """Convert text or number into binary."""
-    if text.isdigit():
+    if isinstance(text, (int, float)) or (isinstance(text, str) and text.isdigit()):
+        # Convert to integer then to binary
         return bin(int(text))
-    else:
+    elif isinstance(text, str):
+        # Convert each character to 8-bit binary
         return " ".join(format(ord(char), "08b") for char in text)
+    else:
+        raise TypeError("Input must be a string or number.")
 
 
 def create_message(name, age, name_binary, age_binary):

@@ -1,9 +1,10 @@
 def save_message(message):
+    
     """Save the message to a text file."""
     try:
-        with open("user_message.txt", "w") as file:
+        with open("user_message.txt", "w", encoding="utf-8") as file:
             file.write(message)
-        print("Message saved successfully.")
+        print("\nMessage saved successfully to 'user_message.txt'.")
     except Exception as e:
         print(f"Error saving message: {e}")
 

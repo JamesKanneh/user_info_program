@@ -1,5 +1,3 @@
-
-
 def save_message(message):
     """Save the message to a text file."""
     try:
@@ -13,11 +11,11 @@ def save_message(message):
 def read_message():
     """Read and print the saved message."""
     try:
-        with open("user_message.txt", "r") as file:
+        with open("user_message.txt", "r", encoding="utf-8") as file:
             content = file.read()
-        print("Reading saved message...")
-        print(content)
+            print("\nSaved Message:\n")
+            print(content)
     except FileNotFoundError:
-        print("Error: File not found. Please save a message first.")
+        print("Error: No saved message found. Please save one first.")
     except Exception as e:
-        print(f"An unexpected error occurred: {e}")
+        print(f"Unexpected error occurred: {e}")
